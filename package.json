@@ -2,7 +2,7 @@
   "name": "developers-portfolio",
   "description": "A personal static website/portfolio template hosted with GitHub Pages, built to showcase my recent projects.",
   "version": "2.0.0", 
-  "homepage": "https://lv042.github.io/home",
+  "homepage": "https://lv042.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
