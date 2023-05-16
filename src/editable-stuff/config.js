@@ -56,7 +56,7 @@ const repos = {
   heading: "Recent Projects",
   gitHubUsername: "lv042", 
   reposLength: 0,
-  specificRepos: ["Super-Smash-Profs", "Weather-Wizard", "Network-Scanner", "Thread-Scheduler", "Solidity-Crowdfunding", "Angry-Gopher"],
+  specificRepos: ["DBgrep", "firstpass","Super-Smash-Profs", "Weather-Wizard", "Network-Scanner", "Thread-Scheduler", "Solidity-Crowdfunding", "Angry-Gopher"],
 };
 
 // Leadership SECTION
