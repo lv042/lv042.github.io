@@ -32,12 +32,13 @@ const Navigation = React.forwardRef((props, ref) => {
   }, [navBottom, navbarDimensions, ref, scrollPosition]);
 
   return (
-    <Navbar
-      ref={navbarMenuRef}
-      className={`px-3 fixed-top  ${!isTop ? "navbar-white" : "navbar-transparent"
-        }`}
-      expand="lg"
-    >
+      <Navbar
+          ref={navbarMenuRef}
+          style={{ zIndex: 999999 }}
+          className={`px-3 fixed-top  ${!isTop ? "navbar-white" : "navbar-transparent"
+          }`}
+          expand="lg"
+      >
       <Navbar.Brand className="navbar-brand" href={process.env.PUBLIC_URL + "/#home"}>
         {`<${mainBody.firstName} />`}
       </Navbar.Brand>
