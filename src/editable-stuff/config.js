@@ -42,7 +42,7 @@ const about = {
   imageLink: require("../assets/img/me.jpeg"),
   imageSize: 375,
   message:
-    "My name is Luca von Kannen. I' am currently doing the fourth semester of my computer science degree in Germany, with a passion for software development. In my free time, I enjoy working on personal coding projects and exploring new technologies to expand my skills. Along with programming, I have a keen interest in bouldering and enjoy playing chess in my spare time. After completing my degree, I aspire to work for an innovative tech company where I can contribute my skills to create impactful software.",
+    "My name is Luca von Kannen. I am currently doing the fourth semester of my computer science degree in Germany, with a passion for software development. In my free time, I enjoy working on personal coding projects and exploring new technologies to expand my skills. Along with programming, I have a keen interest in bouldering and enjoy playing chess in my spare time. After completing my degree, I aspire to work for an innovative tech company where I can contribute my skills to create impactful software.",
   resume: require("../editable-stuff/resume.pdf"),
 };
 
