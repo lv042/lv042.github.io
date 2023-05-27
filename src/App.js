@@ -21,10 +21,18 @@ import Skills from "./components/home/Skills";
 import GetInTouch from "./components/home/GetInTouch.jsx";
 import Leadership from "./components/home/Leadership.jsx";
 import Experience from "./components/home/Experience";
+import "./App.scss"; // Import the SCSS file for additional styles
+
+
 
 const Home = React.forwardRef((props, ref) => {
   return (
-    <>
+    <div className="particle-container"> {/* Add the particle container */}
+      <div className="particle particle-1"></div> {/* Add the particle effect */}
+      <div className="particle particle-2"></div> {/* Add the particle effect */}
+      <div className="particle particle-3"></div> {/* Add the particle effect */}
+      <div className="particle particle-4"></div> {/* Add the particle effect */}
+    
       <MainBody
         gradient={mainBody.gradientColors}
         title={`${mainBody.firstName} ${mainBody.middleName} ${mainBody.lastName}`}
@@ -69,7 +77,8 @@ const Home = React.forwardRef((props, ref) => {
           softSkills={skills.softSkills}
         />
       )}
-    </>
+    
+    </div>
   );
 });
 
