@@ -11,7 +11,7 @@ const MainBody = React.forwardRef(
         fluid
         id="home"
         style={{
-          background: `linear-gradient(136deg, ${gradient})`,
+          background: `linear-gradient(-10deg, ${gradient})`,
           backgroundSize: "100% 100%",
         }}
         className="title bg-transparent bgstyle text-light min-vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
