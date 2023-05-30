@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.a08db190.css",
+    "main.css": "/static/css/main.389677a2.css",
     "main.js": "/static/js/main.96485426.js",
     "static/js/787.4b24f717.chunk.js": "/static/js/787.4b24f717.chunk.js",
     "static/media/resume.pdf": "/static/media/resume.a37378cd421d2d0efd3c.pdf",
     "static/media/me.jpeg": "/static/media/me.4561b9b5f98e70ac61cd.jpeg",
     "static/media/TeamNL-logo.jpg": "/static/media/TeamNL-logo.9afc70683a4e399d31d0.jpg",
     "index.html": "/index.html",
-    "main.a08db190.css.map": "/static/css/main.a08db190.css.map",
+    "main.389677a2.css.map": "/static/css/main.389677a2.css.map",
     "main.96485426.js.map": "/static/js/main.96485426.js.map",
     "787.4b24f717.chunk.js.map": "/static/js/787.4b24f717.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a08db190.css",
+    "static/css/main.389677a2.css",
     "static/js/main.96485426.js"
   ]
 }
