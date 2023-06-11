@@ -99,7 +99,7 @@ const App = () => {
       </Footer>
       {/* Add the link to your icon in the head section */}
       <head>
-        <link rel="shortcut icon" href="./assets/img/L.png" type="image/png" />
+        <link rel="shortcut icon" href="./assets/img/.png" type="image/png" />
       </head>
     </BrowserRouter>
   );

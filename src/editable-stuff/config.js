@@ -5,8 +5,9 @@ const navBar = {
 
 // Main Body SECTION
 const mainBody = {
-  gradientColors: "#9c27b0, #3f51b5, #00bcd4",
+  gradientColors: "#9CECFB, #65C7F7, #0052D4",
   // gradientColors: " , , #43B7B8",
+  // gradientColors: #FF6F00, #9C27B0",
   
   firstName: "Luca",
   middleName: "",
@@ -58,7 +59,7 @@ const repos = {
   heading: "Recent Projects",
   gitHubUsername: "lv042", 
   reposLength: 0,
-  specificRepos: ["DBgrep","firstpass","Super-Smash-Profs", "Weather-Wizard", "Network-Scanner", "Thread-Scheduler", "Solidity-Crowdfunding", "Angry-Gopher"],
+  specificRepos: ["DBgrep","firstpass","Weather-Wizard", "Solidity-Crowdfunding", "Super-Smash-Profs",  "Network-Scanner", "Thread-Scheduler", "Angry-Gopher"],
 };
 
 // Leadership SECTION

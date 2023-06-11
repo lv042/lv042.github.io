@@ -6,11 +6,14 @@ import Nav from "react-bootstrap/Nav";
 import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
 import { NavLink } from "./home/migration";
 
+
+
+
 const Navigation = React.forwardRef((props, ref) => {
-  // const { showBlog, FirstName } = config;
   const [isTop, setIsTop] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
   const navbarMenuRef = React.useRef();
+
   const navbarDimensions = useResizeObserver(navbarMenuRef);
   const navBottom = navbarDimensions ? navbarDimensions.bottom : 0;
   useScrollPosition(
@@ -31,54 +34,63 @@ const Navigation = React.forwardRef((props, ref) => {
       : setIsTop(true);
   }, [navBottom, navbarDimensions, ref, scrollPosition]);
 
+  const textColor = isTop ? "text-white" : "text-black"; // Define text color based on scroll position
+
   return (
-      <Navbar
-          ref={navbarMenuRef}
-          style={{ zIndex: 999999 }}
-          className={`px-3 fixed-top  ${!isTop ? "navbar-white" : "navbar-transparent"
-          }`}
-          expand="lg"
+    <Navbar
+      ref={navbarMenuRef}
+      style={{ zIndex: 999999 }}
+      className={`fixed-top ${!isTop ? "navbar-white" : "navbar-transparent"} style={{ paddingLeft: "0px", paddingRight: "0px"}`}
+      expand="lg"
+    >
+      <Navbar.Brand
+        className={`navbar-brand pl-0 ${textColor}`} // Apply text color class
+        style={{ marginRight: "0px" }}
+        href={process.env.PUBLIC_URL + "/#home"}
       >
-      <Navbar.Brand className="navbar-brand" href={process.env.PUBLIC_URL + "/#home"}>
-        {`<${mainBody.firstName} />`}
+        <div
+          style={{
+            width: "120px",
+            height: "60px",
+            borderRadius: "50%",
+            overflow: "hidden",
+            marginRight: "0px",
+          }}
+        >
+          <img
+            src="https://avatars.githubusercontent.com/u/93200523?v=4"
+            alt="logo"
+            style={{ objectFit: "cover", width: "100%", height: "100%" }}
+            className="logo"
+          />
+        </div>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="navbar-nav mr-auto">
-          {/* {
-            <NavLink className="nav-item lead">
-              <Link to={process.env.PUBLIC_URL + "/blog"}>Blog</Link>
-            </NavLink>
-          } */}
           {repos.show && (
-
-            <NavLink
-              href={process.env.PUBLIC_URL + "/#projects"}
-            >
+            <NavLink href={process.env.PUBLIC_URL + "/#projects"} style={{ marginLeft: "10px" }} className={textColor}>
               Projects
             </NavLink>
           )}
           <NavLink
-            className="nav-item lead"
+            className={`nav-item lead ${textColor}`} // Apply text color class
             href={about.resume}
             target="_blank"
             rel="noreferrer noopener"
+            style={{ marginLeft: "10px" }}
           >
             Resume
           </NavLink>
           {about.show && (
-            <NavLink
-              className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/#aboutme"}
-            >
+            <NavLink className={`nav-item lead ${textColor}`} // Apply text color class
+              href={process.env.PUBLIC_URL + "/#aboutme"} style={{ marginLeft: "10px" }}>
               About
             </NavLink>
           )}
           {skills.show && (
-            <NavLink
-              className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/#skills"}
-            >
+            <NavLink className={`nav-item lead ${textColor}`} // Apply text color class
+              href={process.env.PUBLIC_URL + "/#skills"} style={{ marginLeft: "10px" }}>
               Skills
             </NavLink>
           )}
