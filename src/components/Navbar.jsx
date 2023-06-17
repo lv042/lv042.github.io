@@ -6,9 +6,6 @@ import Nav from "react-bootstrap/Nav";
 import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
 import { NavLink } from "./home/migration";
 
-
-
-
 const Navigation = React.forwardRef((props, ref) => {
   const [isTop, setIsTop] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -39,8 +36,8 @@ const Navigation = React.forwardRef((props, ref) => {
   return (
     <Navbar
       ref={navbarMenuRef}
-      style={{ zIndex: 999999 }}
-      className={`fixed-top ${!isTop ? "navbar-white" : "navbar-transparent"} style={{ paddingLeft: "0px", paddingRight: "0px"}`}
+      style={{ zIndex: 999999, paddingLeft: "0px", paddingRight: "16px" }}
+      className={`fixed-top ${!isTop ? "navbar-white" : "navbar-transparent"} `}
       expand="lg"
     >
       <Navbar.Brand
@@ -67,9 +64,23 @@ const Navigation = React.forwardRef((props, ref) => {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="navbar-nav mr-auto">
+        <Nav
+          className="navbar-nav mr-auto"
+          style={{
+            paddingLeft: "22px",
+            paddingRight: "22px", // Add padding for mobile view
+            "@media (min-width: 768px)": {
+              paddingLeft: "22px", // Add padding for mobile and desktop view
+              paddingRight: "16px", // Reset padding for desktop view
+            },
+          }}
+        >
           {repos.show && (
-            <NavLink href={process.env.PUBLIC_URL + "/#projects"} style={{ marginLeft: "10px" }} className={textColor}>
+            <NavLink
+              href={process.env.PUBLIC_URL + "/#projects"}
+              style={{ marginLeft: "10px" }}
+              className={textColor}
+            >
               Projects
             </NavLink>
           )}
@@ -83,14 +94,20 @@ const Navigation = React.forwardRef((props, ref) => {
             Resume
           </NavLink>
           {about.show && (
-            <NavLink className={`nav-item lead ${textColor}`} // Apply text color class
-              href={process.env.PUBLIC_URL + "/#aboutme"} style={{ marginLeft: "10px" }}>
+            <NavLink
+              className={`nav-item lead ${textColor}`} // Apply text color class
+              href={process.env.PUBLIC_URL + "/#aboutme"}
+              style={{ marginLeft: "10px" }}
+            >
               About
             </NavLink>
           )}
           {skills.show && (
-            <NavLink className={`nav-item lead ${textColor}`} // Apply text color class
-              href={process.env.PUBLIC_URL + "/#skills"} style={{ marginLeft: "10px" }}>
+            <NavLink
+              className={`nav-item lead ${textColor}`} // Apply text color class
+              href={process.env.PUBLIC_URL + "/#skills"}
+              style={{ marginLeft: "10px" }}
+            >
               Skills
             </NavLink>
           )}
