@@ -10,6 +10,8 @@ const Navigation = React.forwardRef((props, ref) => {
   const [isTop, setIsTop] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
   const navbarMenuRef = React.useRef();
+  const [isMobileView, setIsMobileView] = useState(false);
+  const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
 
   const navbarDimensions = useResizeObserver(navbarMenuRef);
   const navBottom = navbarDimensions ? navbarDimensions.bottom : 0;
@@ -31,14 +33,36 @@ const Navigation = React.forwardRef((props, ref) => {
       : setIsTop(true);
   }, [navBottom, navbarDimensions, ref, scrollPosition]);
 
+  const handleNavbarToggle = () => {
+    setIsNavbarExpanded(!isNavbarExpanded);
+  };
+
+  const handleResize = () => {
+    setIsMobileView(window.innerWidth < 990);
+  };
+
+  React.useEffect(() => {
+    if (!navbarDimensions) return;
+
+    setIsMobileView(window.innerWidth < 990);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [navbarDimensions]);
+
   const textColor = isTop ? "text-white" : "text-black"; // Define text color based on scroll position
+  const menuPaddingLeft = isMobileView ? "28px" : "0px"; // Add left padding only in mobile view
 
   return (
     <Navbar
       ref={navbarMenuRef}
-      style={{ zIndex: 999999, paddingLeft: "0px", paddingRight: "16px" }}
+      style={{ zIndex: 999999, paddingRight: "16px" }}
       className={`fixed-top ${!isTop ? "navbar-white" : "navbar-transparent"} `}
       expand="lg"
+      expanded={isNavbarExpanded}
+      onToggle={handleNavbarToggle}
     >
       <Navbar.Brand
         className={`navbar-brand pl-0 ${textColor}`} // Apply text color class
@@ -64,17 +88,7 @@ const Navigation = React.forwardRef((props, ref) => {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav
-          className="navbar-nav mr-auto"
-          style={{
-            paddingLeft: "22px",
-            paddingRight: "22px", // Add padding for mobile view
-            "@media (min-width: 768px)": {
-              paddingLeft: "22px", // Add padding for mobile and desktop view
-              paddingRight: "16px", // Reset padding for desktop view
-            },
-          }}
-        >
+        <Nav className="navbar-nav mr-auto" style={{paddingLeft: menuPaddingLeft}}>
           {repos.show && (
             <NavLink
               href={process.env.PUBLIC_URL + "/#projects"}
