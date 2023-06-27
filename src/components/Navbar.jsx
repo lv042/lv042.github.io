@@ -113,9 +113,20 @@ const Navigation = React.forwardRef((props, ref) => {
               href={process.env.PUBLIC_URL + "/#aboutme"}
               style={{ marginLeft: "10px" }}
             >
+              Gallery
+            </NavLink>
+          )}
+          {about.show && (
+            <NavLink
+              className={`nav-item lead ${textColor}`} // Apply text color class
+              href={process.env.PUBLIC_URL + "/#aboutme"}
+              style={{ marginLeft: "10px" }}
+            >
               About
             </NavLink>
           )}
+
+          
           {skills.show && (
             <NavLink
               className={`nav-item lead ${textColor}`} // Apply text color class

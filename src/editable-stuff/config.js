@@ -126,14 +126,19 @@ const experiences = {
   heading: "Experiences",
   data: [
     {
-      role: 'Software Engineer',// Here Add Company Name
+      role: 'Student Software Engineer',// Here Add Company Name
       companylogo: require('../assets/img/fraunhofer-vector-logo.png'),
       date: 'June 2022 – December 2022',
     },
     {
-      role: 'Software Engineer',// Here Add Company Name
+      role: 'Student Software Engineer',// Here Add Company Name
       companylogo: require('../assets/img/TeamNL-logo.jpg'),
       date: 'February 2023 – Present',
+    },
+    {
+      role: 'Software Engineer Intern',// Here Add Company Name
+      companylogo: require('../assets/img/P911.DE.png'),
+      date: 'June 2022 – December 2022',
     },
   
   ]
