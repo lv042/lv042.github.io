@@ -19,7 +19,8 @@ import Skills from "./components/home/Skills";
 import GetInTouch from "./components/home/GetInTouch.jsx";
 import Leadership from "./components/home/Leadership.jsx";
 import Experience from "./components/home/Experience";
-import "./App.scss"; // Import the SCSS file for additional styles
+import "./App.scss";
+import Gallery from "./components/Gallery"; // Import the SCSS file for additional styles
 
 const Home = React.forwardRef((props, ref) => {
   return (
@@ -87,6 +88,7 @@ const App = () => {
       {navBar.show && <Navbar ref={titleRef} />}
       <Routes>
         <Route path="/" exact element={<Home ref={titleRef} />} />
+          <Route path="/gallery" exact element={<Gallery ref={titleRef} />} />
       </Routes>
       <Footer>
         {getInTouch.show && (
