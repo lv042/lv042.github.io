@@ -15,6 +15,7 @@ const ExperienceCard = ({ data }) => {
             justifyContent: 'center',
             overflow: 'hidden',
             margin: '0 auto',
+            marginBottom: '20px',
           }}
         >
           <img
