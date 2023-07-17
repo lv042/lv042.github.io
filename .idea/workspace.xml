@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e60bb554-3ad2-435c-bfd8-20a88fd1ba10" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/gallery/IMG_20230629_232430.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/gallery/IMG_20230629_232902.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/gallery/IMG_20230629_233121.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/gallery/brown.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/gallery/windmill.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Gallery.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Gallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Gallery.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

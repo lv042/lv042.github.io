@@ -1,18 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { useScrollPosition } from "../hooks/useScrollPosition";
-import useResizeObserver from "../hooks/useResizeObserver";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
-import { NavLink } from "./home/migration";
+import React, { useState, useEffect } from 'react';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import { mainBody, repos, about, skills } from '../editable-stuff/config.js';
+import { NavLink } from './home/migration';
 
-const Navigation = React.forwardRef((props, ref) => {
+const Navigation = React.forwardRef(({ isGalleryPage }, ref) => {
   const [isTop, setIsTop] = useState(true);
-  const navbarMenuRef = React.useRef();
   const [isMobileView, setIsMobileView] = useState(false);
   const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
-
-  const navbarDimensions = useResizeObserver(navbarMenuRef);
 
   const handleNavbarToggle = () => {
     setIsNavbarExpanded(!isNavbarExpanded);
@@ -22,125 +17,117 @@ const Navigation = React.forwardRef((props, ref) => {
     setIsMobileView(window.innerWidth < 990);
   };
 
-  useEffect(() => {
-    if (!navbarDimensions) return;
+  const navbarTextColor = isGalleryPage ? 'text-black' : 'text-white';
+  const navbarTextColorScroll = 'text-black';
 
+  useEffect(() => {
     setIsMobileView(window.innerWidth < 990);
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [navbarDimensions]);
-
-  useEffect(() => {
-    let prevScrollPosition = window.pageYOffset;
-
-    const handleScroll = () => {
-      const currentScrollPosition = window.pageYOffset;
-
-      if (currentScrollPosition < prevScrollPosition) {
-        setIsTop(true);
-      } else {
-        setIsTop(false);
-      }
-
-      prevScrollPosition = currentScrollPosition;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  const textColor = isTop ? "text-white" : "text-black"; // Define text color based on scroll position
-  const menuPaddingLeft = isMobileView ? "28px" : "0px"; // Add left padding only in mobile view
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.pageYOffset;
+      setIsTop(position === 0);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const textColor = isTop ? navbarTextColor : navbarTextColorScroll;
+  const menuPaddingLeft = isMobileView ? '28px' : '0px';
 
   return (
-      <Navbar
-          ref={navbarMenuRef}
-          style={{ zIndex: 999999, paddingRight: "16px" }}
-          className={`fixed-top ${!isTop ? "navbar-white" : "navbar-transparent"} `}
-          expand="lg"
-          expanded={isNavbarExpanded}
-          onToggle={handleNavbarToggle}
+    <Navbar
+      ref={ref}
+      style={{ zIndex: 999999, paddingRight: '16px' }}
+      className={`fixed-top ${!isTop ? 'navbar-white' : 'navbar-transparent'}`}
+      expand="lg"
+      expanded={isNavbarExpanded}
+      onToggle={handleNavbarToggle}
+    >
+      <Navbar.Brand
+        className={`navbar-brand pl-0 ${textColor}`}
+        style={{ marginRight: '0px' }}
+        href={process.env.PUBLIC_URL + '/#home'}
       >
-        <Navbar.Brand
-            className={`navbar-brand pl-0 ${textColor}`} // Apply text color class
-            style={{ marginRight: "0px" }}
-            href={process.env.PUBLIC_URL + "/#home"}
+        <div
+          style={{
+            width: '120px',
+            height: '60px',
+            borderRadius: '50%',
+            overflow: 'hidden',
+            marginRight: '0px',
+          }}
         >
-          <div
-              style={{
-                width: "120px",
-                height: "60px",
-                borderRadius: "50%",
-                overflow: "hidden",
-                marginRight: "0px",
-              }}
-          >
-            <img
-                src="https://avatars.githubusercontent.com/u/93200523?v=4"
-                alt="logo"
-                style={{ objectFit: "cover", width: "100%", height: "100%" }}
-                className="logo"
-            />
-          </div>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="navbar-nav mr-auto" style={{ paddingLeft: menuPaddingLeft }}>
-            {repos.show && (
-                <NavLink
-                    href={process.env.PUBLIC_URL + "/#projects"}
-                    style={{ marginLeft: "10px" }}
-                    className={textColor}
-                >
-                  Projects
-                </NavLink>
-            )}
+          <img
+            src="https://avatars.githubusercontent.com/u/93200523?v=4"
+            alt="logo"
+            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+            className="logo"
+          />
+        </div>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="navbar-nav mr-auto" style={{ paddingLeft: menuPaddingLeft }}>
+          {repos.show && (
             <NavLink
-                className={`nav-item lead ${textColor}`} // Apply text color class
-                href={about.resume}
-                target="_blank"
-                rel="noreferrer noopener"
-                style={{ marginLeft: "10px" }}
+              href={process.env.PUBLIC_URL + '/#projects'}
+              style={{ marginLeft: '10px' }}
+              className={textColor}
             >
-              Resume
+              Projects
             </NavLink>
-            {about.show && (
-                <NavLink
-                    className={`nav-item lead ${textColor}`} // Apply text color class
-                    href={process.env.PUBLIC_URL + "/gallery"}
-                    style={{ marginLeft: "10px" }}
-                >
-                  Gallery
-                </NavLink>
-            )}
-            {about.show && (
-                <NavLink
-                    className={`nav-item lead ${textColor}`} // Apply text color class
-                    href={process.env.PUBLIC_URL + "/#aboutme"}
-                    style={{ marginLeft: "10px" }}
-                >
-                  About
-                </NavLink>
-            )}
+          )}
+          <NavLink
+            className={`nav-item lead ${textColor}`}
+            href={about.resume}
+            target="_blank"
+            rel="noreferrer noopener"
+            style={{ marginLeft: '10px' }}
+          >
+            Resume
+          </NavLink>
+          {about.show && (
+            <NavLink
+              className={`nav-item lead ${textColor}`}
+              href={process.env.PUBLIC_URL + '/gallery'}
+              style={{ marginLeft: '10px' }}
+            >
+              Gallery
+            </NavLink>
+          )}
+          {about.show && (
+            <NavLink
+              className={`nav-item lead ${textColor}`}
+              href={process.env.PUBLIC_URL + '/#aboutme'}
+              style={{ marginLeft: '10px' }}
+            >
+              About
+            </NavLink>
+          )}
 
-            {skills.show && (
-                <NavLink
-                    className={`nav-item lead ${textColor}`} // Apply text color class
-                    href={process.env.PUBLIC_URL + "/#skills"}
-                    style={{ marginLeft: "10px" }}
-                >
-                  Skills
-                </NavLink>
-            )}
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+          {skills.show && (
+            <NavLink
+              className={`nav-item lead ${textColor}`}
+              href={process.env.PUBLIC_URL + '/#skills'}
+              style={{ marginLeft: '10px' }}
+            >
+              Skills
+            </NavLink>
+          )}
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 });
 
