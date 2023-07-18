@@ -80,6 +80,8 @@ const Home = React.forwardRef((props, ref) => {
   );
 });
 
+
+
 const App = () => {
   const titleRef = React.useRef();
 
@@ -88,7 +90,7 @@ const App = () => {
       {navBar.show && <Navbar ref={titleRef} />}
       <Routes>
         <Route path="/" exact element={<Home ref={titleRef} />} />
-          <Route path="/gallery" exact element={<Gallery ref={titleRef} />} />
+          <Route path="/gallery" exact element={<Gallery />} />
       </Routes>
       <Footer>
         {getInTouch.show && (

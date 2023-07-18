@@ -11,7 +11,7 @@ import t1 from '../assets/gallery/t1.jpeg';
 import t2 from '../assets/gallery/t2.jpeg';
 import t3 from '../assets/gallery/t3.jpeg';
 
-const Gallery = () => {
+const Gallery = React.forwardRef((props, ref) => {
   return (
     <>
       <Navigation isGalleryPage={true} />
@@ -261,6 +261,6 @@ const Gallery = () => {
       </Jumbotron>
     </>
   );
-};
+});
 
 export default Gallery;
