@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.25e535b1.css",
+    "main.css": "/static/css/main.f3c004dd.css",
     "main.js": "/static/js/main.a50effa4.js",
     "static/js/787.4b24f717.chunk.js": "/static/js/787.4b24f717.chunk.js",
     "static/media/windmill.jpg": "/static/media/windmill.d5d469f08a05dae968cf.jpg",
@@ -17,12 +17,12 @@
     "static/media/me.jpeg": "/static/media/me.4561b9b5f98e70ac61cd.jpeg",
     "static/media/TeamNL-logo.jpg": "/static/media/TeamNL-logo.ef4db3d24e0cad036317.jpg",
     "index.html": "/index.html",
-    "main.25e535b1.css.map": "/static/css/main.25e535b1.css.map",
+    "main.f3c004dd.css.map": "/static/css/main.f3c004dd.css.map",
     "main.a50effa4.js.map": "/static/js/main.a50effa4.js.map",
     "787.4b24f717.chunk.js.map": "/static/js/787.4b24f717.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.25e535b1.css",
+    "static/css/main.f3c004dd.css",
     "static/js/main.a50effa4.js"
   ]
 }
