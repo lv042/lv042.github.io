@@ -8,9 +8,11 @@ const Navigation = React.forwardRef(({ isGalleryPage }, ref) => {
   const [isTop, setIsTop] = useState(true);
   const [isMobileView, setIsMobileView] = useState(false);
   const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState(null); // New state for hovered item
 
   const handleNavbarToggle = () => {
     setIsNavbarExpanded(!isNavbarExpanded);
+    setHoveredItem(null); // Reset the hovered item
   };
 
   const handleResize = () => {
@@ -45,11 +47,19 @@ const Navigation = React.forwardRef(({ isGalleryPage }, ref) => {
   const textColor = isTop ? navbarTextColor : navbarTextColorScroll;
   const menuPaddingLeft = isMobileView ? '28px' : '0px';
 
+  const handleItemHover = (index) => {
+    setHoveredItem(index);
+  };
+
+  const getNavLinkClassName = (index) => {
+    return `nav-item lead ${textColor} ${hoveredItem === index ? 'highlighted' : ''}`;
+  };
+
   return (
     <Navbar
       ref={ref}
       style={{ zIndex: 999999, paddingRight: '16px' }}
-      className={`fixed-top ${!isTop ? 'navbar-white' : 'navbar-transparent'}`}
+      className={`fixed-top ${!isTop ? 'navbar-white' : 'navbar-transparent'} ${textColor}`}
       expand="lg"
       expanded={isNavbarExpanded}
       onToggle={handleNavbarToggle}
@@ -81,15 +91,17 @@ const Navigation = React.forwardRef(({ isGalleryPage }, ref) => {
         <Nav className="navbar-nav mr-auto" style={{ paddingLeft: menuPaddingLeft }}>
           {repos.show && (
             <NavLink
+              onMouseEnter={() => handleItemHover(0)}
+              onMouseLeave={() => handleItemHover(null)}
               href={process.env.PUBLIC_URL + '/#projects'}
               style={{ marginLeft: '10px' }}
-              className={textColor}
+              className={getNavLinkClassName(0)}
             >
               Projects
             </NavLink>
           )}
           <NavLink
-            className={`nav-item lead ${textColor}`}
+            className={getNavLinkClassName(1)}
             href={about.resume}
             target="_blank"
             rel="noreferrer noopener"
@@ -99,7 +111,7 @@ const Navigation = React.forwardRef(({ isGalleryPage }, ref) => {
           </NavLink>
           {about.show && (
             <NavLink
-              className={`nav-item lead ${textColor}`}
+              className={getNavLinkClassName(2)}
               href={process.env.PUBLIC_URL + '/gallery'}
               style={{ marginLeft: '10px' }}
             >
@@ -108,7 +120,7 @@ const Navigation = React.forwardRef(({ isGalleryPage }, ref) => {
           )}
           {about.show && (
             <NavLink
-              className={`nav-item lead ${textColor}`}
+              className={getNavLinkClassName(3)}
               href={process.env.PUBLIC_URL + '/#aboutme'}
               style={{ marginLeft: '10px' }}
             >
@@ -118,7 +130,7 @@ const Navigation = React.forwardRef(({ isGalleryPage }, ref) => {
 
           {skills.show && (
             <NavLink
-              className={`nav-item lead ${textColor}`}
+              className={getNavLinkClassName(4)}
               href={process.env.PUBLIC_URL + '/#skills'}
               style={{ marginLeft: '10px' }}
             >

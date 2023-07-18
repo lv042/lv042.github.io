@@ -138,7 +138,7 @@ const experiences = {
     {
       role: 'Software Engineer Intern',// Here Add Company Name
       companylogo: require('../assets/img/P911.DE.png'),
-      date: 'Oktober 2023 – March 2024',
+      date: 'Oktober 2023 – Present',
     },
 
   ]
