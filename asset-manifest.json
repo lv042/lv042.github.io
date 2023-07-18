@@ -1,18 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.a1dc50b2.css",
-    "main.js": "/static/js/main.c38540b5.js",
+    "main.css": "/static/css/main.dd3e08b5.css",
+    "main.js": "/static/js/main.69ca5432.js",
     "static/js/787.4b24f717.chunk.js": "/static/js/787.4b24f717.chunk.js",
+    "static/media/windmill.jpg": "/static/media/windmill.d5d469f08a05dae968cf.jpg",
+    "static/media/t1.jpeg": "/static/media/t1.b2e7699b58ee2961c1b4.jpeg",
+    "static/media/IMG_20230630_012758.jpg": "/static/media/IMG_20230630_012758.3a1bb8972d617fc0f7d9.jpg",
+    "static/media/IMG_20230629_233121.jpg": "/static/media/IMG_20230629_233121.65fa736713c24018cce1.jpg",
+    "static/media/t3.jpeg": "/static/media/t3.6cc0a4cfdf7d9d800357.jpeg",
+    "static/media/t2.jpeg": "/static/media/t2.cb383e0aba0db2bf2caf.jpeg",
+    "static/media/brown.jpg": "/static/media/brown.b8330307141522770d17.jpg",
+    "static/media/IMG_20230629_232902.jpg": "/static/media/IMG_20230629_232902.bb6e481f5ecc85ec12ab.jpg",
+    "static/media/P911.DE.png": "/static/media/P911.DE.adb5b7e7c82ab2cf1a4f.png",
+    "static/media/IMG_20230629_232430.jpg": "/static/media/IMG_20230629_232430.c8fce892b136d6d9fbc7.jpg",
     "static/media/resume.pdf": "/static/media/resume.a37378cd421d2d0efd3c.pdf",
     "static/media/me.jpeg": "/static/media/me.4561b9b5f98e70ac61cd.jpeg",
-    "static/media/TeamNL-logo.jpg": "/static/media/TeamNL-logo.9afc70683a4e399d31d0.jpg",
+    "static/media/TeamNL-logo.jpg": "/static/media/TeamNL-logo.ef4db3d24e0cad036317.jpg",
     "index.html": "/index.html",
-    "main.a1dc50b2.css.map": "/static/css/main.a1dc50b2.css.map",
-    "main.c38540b5.js.map": "/static/js/main.c38540b5.js.map",
+    "main.dd3e08b5.css.map": "/static/css/main.dd3e08b5.css.map",
+    "main.69ca5432.js.map": "/static/js/main.69ca5432.js.map",
     "787.4b24f717.chunk.js.map": "/static/js/787.4b24f717.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a1dc50b2.css",
-    "static/js/main.c38540b5.js"
+    "static/css/main.dd3e08b5.css",
+    "static/js/main.69ca5432.js"
   ]
 }
