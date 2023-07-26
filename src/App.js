@@ -90,7 +90,7 @@ const App = () => {
       {navBar.show && <Navbar ref={titleRef} />}
       <Routes>
         <Route path="/" exact element={<Home ref={titleRef} />} />
-          <Route path="/gallery" exact element={<Gallery />} />
+          <Route path="/gallery" exact element={<Gallery ref={titleRef} />} />
       </Routes>
       <Footer>
         {getInTouch.show && (

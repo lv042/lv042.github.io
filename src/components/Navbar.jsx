@@ -109,15 +109,15 @@ const Navigation = React.forwardRef(({ isGalleryPage }, ref) => {
           >
             Resume
           </NavLink>
-          {about.show && (
+          {/* {about.show && (
             <NavLink
               className={getNavLinkClassName(2)}
               href={process.env.PUBLIC_URL + '/gallery'}
               style={{ marginLeft: '10px' }}
             >
-              Gallery
+               Gallery 
             </NavLink>
-          )}
+          )} */}
           {about.show && (
             <NavLink
               className={getNavLinkClassName(3)}
