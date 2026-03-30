@@ -30,7 +30,7 @@ function renderProjectCard(repo, pinned) {
       <div class="proj-name">${repo.name}</div>
       <div class="proj-desc">${repo.description || '—'}</div>
       <div class="proj-tags">${repo.language ? `<span class="tag">${repo.language}</span>` : ''}</div>
-      <span class="proj-link">↗ GitHub</span>
+      <span class="proj-link">GitHub</span>
     </div>`;
   wrapper.appendChild(card);
   return wrapper;

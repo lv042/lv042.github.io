@@ -449,4 +449,8 @@ wired-button a { text-decoration: none; color: inherit; }
   .proj-grid { grid-template-columns: 1fr; }
 
   .proj-grid > a wired-card { height: auto !important; }
+
+  #cursor { display: none; }
+  *, *::before, *::after { cursor: auto !important; }
+  wired-card, wired-button, wired-divider { cursor: auto !important; }
 }
