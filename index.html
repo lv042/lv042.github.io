@@ -1,1 +1,150 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="shortcut icon" href="/favicon.ico"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" rel="stylesheet"/><meta name="theme-color" content="#000000"/><meta name="description" content="My name is Luca von Kannen. I am currently doing the fourth semester of my computer science degree in Germany, with a passion for software development. In my free time, I enjoy working on personal coding projects and exploring new technologies to expand my skills. Along with programming, I have a keen interest in bouldering and enjoy playing chess in my spare time. After completing my degree, I aspire to work for an innovative tech company where I can contribute my skills to create impactful software."/><link rel="apple-touch-icon" href="logo192.png"/><link rel="manifest" href="/manifest.json"/><meta property="twitter:image" content="/social-image.png"/><meta property="og:image" content="/social-image.png"/><title>Luca von Kannen</title><script defer="defer" src="/static/js/main.cffce852.js"></script><link href="/static/css/main.657d13f0.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luca von Kannen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="module" src="https://unpkg.com/wired-elements?module"></script>
+  <script src="https://unpkg.com/roughjs@latest/bundled/rough.js"></script>
+</head>
+<body>
+<div class="frame">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <button class="nav-item active" data-section="about">About</button>
+    <button class="nav-item" data-section="experience">Experience</button>
+    <button class="nav-item" data-section="projects">Projects</button>
+    <button class="nav-item" data-section="blog">Blog</button>
+    <div class="sidebar-logo" id="build-id">v0.1</div>
+  </aside>
+
+  <div class="sidebar-sep"><svg id="sep-svg"></svg></div>
+
+  <!-- Content -->
+  <main class="content-area" id="content-area">
+    <div class="content-inner">
+
+      <!-- About -->
+      <section class="section active" id="section-about">
+        <div class="about-hero">
+          <div class="about-name">Luca von Kannen</div>
+        </div>
+
+        <div class="status">
+          <span class="status-dot"></span>
+          Software Development Engineer @ AWS
+        </div>
+
+        <p class="bio">Software engineer at <strong>Amazon Web Services</strong> in Dresden. CS degree from Stuttgart Media University, previously at Porsche and Fraunhofer.</p>
+
+        <div class="block-label">Tech</div>
+        <div class="skill-row">
+          <span class="tag">Python</span>
+          <span class="tag">Golang</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">AWS</span>
+          <span class="tag">Databases</span>
+          <span class="tag">Docker</span>
+        </div>
+
+        <div class="link-row">
+          <wired-button elevation="2"><a href="https://github.com/lv042" target="_blank">↗ GitHub</a></wired-button>
+          <wired-button elevation="2"><a href="https://www.linkedin.com/in/lucavk/" target="_blank">LinkedIn</a></wired-button>
+          <wired-button elevation="2"><a href="mailto:luca.v.kannen@gmail.com">✉ Email</a></wired-button>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="section" id="section-experience">
+        <div class="page-title">Experience</div>
+        <wired-divider></wired-divider>
+
+        <div class="timeline">
+          <svg id="tl-svg"></svg>
+
+          <div class="tl-entry current">
+            <div class="tl-dot"></div>
+            <wired-card elevation="1">
+              <div class="tl-role">Software Engineer</div>
+              <div class="tl-co">Amazon Web Services (AWS)</div>
+              <div class="tl-meta">Aug 2025 – present &nbsp;·&nbsp; Dresden, Germany</div>
+            </wired-card>
+          </div>
+
+          <div class="tl-entry">
+            <div class="tl-dot"></div>
+            <wired-card elevation="1">
+              <div class="tl-role">Software Engineer · Intern</div>
+              <div class="tl-co">Amazon Web Services (AWS)</div>
+              <div class="tl-meta">Sep 2024 – Mar 2025 &nbsp;·&nbsp; 7 months &nbsp;·&nbsp; Dresden, Germany</div>
+            </wired-card>
+          </div>
+
+          <div class="tl-entry">
+            <div class="tl-dot"></div>
+            <wired-card elevation="1">
+              <div class="tl-role">Software Engineer · Working Student</div>
+              <div class="tl-co">Porsche Engineering</div>
+              <div class="tl-meta">Oct 2023 – Aug 2024 &nbsp;·&nbsp; 11 months &nbsp;·&nbsp; Mönsheim, Germany</div>
+            </wired-card>
+          </div>
+
+          <div class="tl-entry">
+            <div class="tl-dot"></div>
+            <wired-card elevation="1">
+              <div class="tl-role">Exchange Semester</div>
+              <div class="tl-co">Amsterdam University of Applied Sciences</div>
+              <div class="tl-meta">Feb 2023 – Jul 2023 &nbsp;·&nbsp; 6 months &nbsp;·&nbsp; Amsterdam, Netherlands</div>
+            </wired-card>
+          </div>
+
+          <div class="tl-entry">
+            <div class="tl-dot"></div>
+            <wired-card elevation="1">
+              <div class="tl-role">Software Development Tutor</div>
+              <div class="tl-co">Stuttgart Media University</div>
+              <div class="tl-meta">Oct 2022 – Mar 2023 &nbsp;·&nbsp; 6 months &nbsp;·&nbsp; Stuttgart, Germany</div>
+            </wired-card>
+          </div>
+
+          <div class="tl-entry">
+            <div class="tl-dot"></div>
+            <wired-card elevation="1">
+              <div class="tl-role">Research Assistant</div>
+              <div class="tl-co">Fraunhofer Institute</div>
+              <div class="tl-meta">Jun 2022 – Oct 2022 &nbsp;·&nbsp; 5 months &nbsp;·&nbsp; Stuttgart, Germany</div>
+            </wired-card>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="section" id="section-projects">
+        <div class="page-title">Projects</div>
+        <wired-divider></wired-divider>
+        <div class="proj-grid" id="proj-grid">
+          <div class="proj-loading">Loading projects…</div>
+        </div>
+      </section>
+
+      <!-- Blog -->
+      <section class="section" id="section-blog">
+        <div class="page-title">Blog</div>
+        <wired-divider></wired-divider>
+        <p class="bio" style="color: var(--text-3);">Nothing here yet — to be written soon.</p>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script src="js/cursor.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
