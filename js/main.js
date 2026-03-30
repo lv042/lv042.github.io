@@ -23,14 +23,19 @@ navItems.forEach(n => n.addEventListener('click', () => showSection(n.dataset.se
 showSection('about');
 
 // ── Init: wait for wired-elements then reveal ──
+function revealFrame() {
+  drawSeparator();
+  requestAnimationFrame(() => document.querySelector('.frame').classList.add('ready'));
+}
+
 Promise.all([
   customElements.whenDefined('wired-card'),
   customElements.whenDefined('wired-button'),
   customElements.whenDefined('wired-divider'),
-]).then(() => {
-  drawSeparator();
-  requestAnimationFrame(() => document.querySelector('.frame').classList.add('ready'));
-});
+]).then(revealFrame);
+
+// Fallback: reveal after 3s even if wired-elements fails to load
+setTimeout(revealFrame, 3000);
 
 window.addEventListener('load', drawSeparator);
 
