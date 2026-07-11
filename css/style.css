@@ -29,30 +29,7 @@
 
 html { overflow: hidden; height: 100%; }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; cursor: none !important; }
-
-wired-card, wired-button, wired-divider { cursor: none !important; }
-
-/* ── Custom cursor ── */
-#cursor {
-  position: fixed;
-  width: 12px;
-  height: 12px;
-  background: #1a1916;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-  transition: width 140ms ease, height 140ms ease, background 140ms ease, border 140ms ease;
-  will-change: transform;
-}
-
-#cursor.hover {
-  width: 30px;
-  height: 30px;
-  background: rgba(180, 176, 170, 0.45);
-  border: 1.5px solid #bbb;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   display: flex;
@@ -448,7 +425,4 @@ wired-button a { text-decoration: none; color: inherit; }
 
   .proj-grid > a wired-card { height: auto !important; }
 
-  #cursor { display: none; }
-  *, *::before, *::after { cursor: auto !important; }
-  wired-card, wired-button, wired-divider { cursor: auto !important; }
 }
